@@ -20,6 +20,9 @@
     "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {
+    "babel-preset-react": "^6.24.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
     "redux": "^3.7.2",
     "serve": "^6.0.6"
   }

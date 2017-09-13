@@ -1,4 +1,9 @@
-import { createPost } from './actions'
+import React from 'react'
+import { render } from 'react-dom';
 
+import Post from './components/Post.jsx'
 
-console.log(createPost('xx', 'ellow'))
+render(
+  <Post user="dan" text="hello world!" />,
+  document.getElementById('root')
+)
