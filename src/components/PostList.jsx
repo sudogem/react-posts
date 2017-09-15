@@ -7,7 +7,6 @@ const PostList = ({ posts }) =>
     <li key={i.toString()}>
       <Post {...p} />
     </li>
-
   )}
 </ul>
 
