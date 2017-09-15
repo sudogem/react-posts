@@ -20,7 +20,9 @@ export default function postsReducer(state = [], action) {
 
     case DELETE_POST: {
       const { type, id } = action
-      return state.filter((post, index))
+      return state.filter((post, index) =>
+        action.id === index ? false : true
+      )
     }
 
     default:

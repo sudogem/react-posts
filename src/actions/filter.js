@@ -9,6 +9,6 @@ export const setFilter = (filter) => {
 
 export const clearFilter = () => {
   return {
-    type: SET_FILTER
+    type: CLEAR_FILTER
   }
 }
