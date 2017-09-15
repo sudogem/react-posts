@@ -14,6 +14,7 @@ store.dispatch(createPost('dan', {
   text: 'hello world..',
   category: 'welcome'
 }))
+
 store.dispatch(createPost('johnny', {
   title: 'Second post',
   text: 'yahooo..',

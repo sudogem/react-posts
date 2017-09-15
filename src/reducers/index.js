@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 
 import usersReducer from './users'
-import postsReducer from './post'
+import postsReducer from './posts'
 import filterReducer from './filter'
 
 const appReducer = combineReducers({

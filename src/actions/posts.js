@@ -1,7 +1,7 @@
 // Post action creators
 import { CREATE_POST, EDIT_POST, DELETE_POST } from '../actionTypes'
 
-const createPost = (user, post) => {
+export const createPost = (user, post) => {
   const { title, text, category='random' } = post
   if (!title || !text) {
     throw new Error('Invalid post, title and text required')
@@ -13,7 +13,7 @@ const createPost = (user, post) => {
   }
 }
 
-const editPost = (id, post) => {
+export const editPost = (id, post) => {
   return {
     type: EDIT_POST,
     id,
@@ -21,13 +21,14 @@ const editPost = (id, post) => {
   }
 }
 
-const deletePost = (id) => {
+export const deletePost = (id) => {
   return {
     type: DELETE_POST,
     id
   }
 }
 
-export createPost
-export editPost
-export deletePost
+// this is wrong...
+// export createPost
+// export editPost
+// export deletePost
