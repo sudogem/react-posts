@@ -1,24 +1,38 @@
-import React from 'react'
+import { connect } from 'react-redux'
 import PostList from '../components/PostList.jsx'
 
-export default class ConnectedPostList extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = props.store.getState()
-  }
+const mapStateToProps = (state, props) => {
+  // short version
+  // const filteredPosts = state.filter ? state.posts.filter((post) =>
+  //   post.category === state.filter) : state.posts
 
-  componentDidMount() {
-    const { store } = this.props
-    this.unsubscribe = store.subscribe(() =>
-      this.setState({ ...store.getState() })
+  const filteredPosts
+  if (state.filter) {
+    filteredPosts = state.posts.filter((post) =>
+      post.category == state.filter
     )
+  } else {
+    filteredPosts = state.posts
   }
 
-  componentWillUnmount () {
-    this.unsubscribe()
-  }
-
-  render() {
-    return <PostList {...this.state} />
+  // without filter
+  // return {
+  //   posts: filteredPosts
+  // }
+  return {
+    posts: filteredPosts.map((post) => {
+      const { user, ...rest } = post
+      const userObj = state.users.find(({ username }) =>
+        user === username
+      )
+      return {
+        user: userObj,
+        ...rest
+      }
+    })
   }
 }
+
+const ConnectedPostList = connect(mapStateToProps)(PostList)
+
+export default ConnectedPostList

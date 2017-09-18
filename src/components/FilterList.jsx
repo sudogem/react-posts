@@ -1,7 +1,7 @@
 import React from 'react'
 import Filter from './Filter.jsx'
 
-const FilterList = ({categories, setFilter, clearFilter }) =>
+const FilterList = ({ categories, setFilter, clearFilter }) =>
   <span>
     {categories.map((category, i) =>
       <span key={i.toString()}>
@@ -11,5 +11,4 @@ const FilterList = ({categories, setFilter, clearFilter }) =>
     <a href="javascript:void(0)" onClick={clearFilter} >All posts</a>
   </span>
 
-  export default FilterList
-  
+export default FilterList
