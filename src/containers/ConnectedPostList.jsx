@@ -3,22 +3,23 @@ import PostList from '../components/PostList.jsx'
 
 const mapStateToProps = (state, props) => {
   // short version
-  // const filteredPosts = state.filter ? state.posts.filter((post) =>
-  //   post.category === state.filter) : state.posts
+  const filteredPosts = state.filter ? state.posts.filter((post) =>
+    post.category === state.filter) : state.posts
 
-  const filteredPosts
-  if (state.filter) {
-    filteredPosts = state.posts.filter((post) =>
-      post.category == state.filter
-    )
-  } else {
-    filteredPosts = state.posts
-  }
+// if (state.filter) {
+//   console.log('aa')
+//   filteredPosts = state.posts.filter((post) =>
+//     post.category == state.filter)
+// } else {
+//   filteredPosts = state.posts
+//   console.log('bb')
+// }
 
-  // without filter
-  // return {
-  //   posts: filteredPosts
-  // }
+console.log('filteredPosts',filteredPosts)
+// without filter
+// return {
+//   posts: filteredPosts
+// }
   return {
     posts: filteredPosts.map((post) => {
       const { user, ...rest } = post
