@@ -4,7 +4,7 @@ export default function postsReducer(state = [], action) {
   switch (action.type) {
     case CREATE_POST: {
       const { type, post } = action
-      const ts = Date.now
+      const ts = Date.now()
       return [
         ...state,
         {...post, created: ts, updated: ts}

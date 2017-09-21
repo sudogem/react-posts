@@ -1,25 +1,31 @@
 import { connect } from 'react-redux'
 import PostList from '../components/PostList.jsx'
 
+/** if without filter **/
+const mapStateToProps2 = (state, props) => {
+  const filteredPosts = state.posts
+  console.log('filteredPosts',filteredPosts)
+  return {
+    posts: filteredPosts
+  }
+}
+
+/** with filter **/
 const mapStateToProps = (state, props) => {
-  // short version
   const filteredPosts = state.filter ? state.posts.filter((post) =>
     post.category === state.filter) : state.posts
 
-// if (state.filter) {
-//   console.log('aa')
-//   filteredPosts = state.posts.filter((post) =>
-//     post.category == state.filter)
-// } else {
-//   filteredPosts = state.posts
-//   console.log('bb')
-// }
+    // if (state.filter) {
+    //   console.log('aa')
+    //   filteredPosts = state.posts.filter((post) =>
+    //     post.category == state.filter)
+    // } else {
+    //   filteredPosts = state.posts
+    //   console.log('bb')
+    // }
 
-console.log('filteredPosts',filteredPosts)
-// without filter
-// return {
-//   posts: filteredPosts
-// }
+
+
   return {
     posts: filteredPosts.map((post) => {
       const { user, ...rest } = post

@@ -8,9 +8,18 @@ import App from './components/App.jsx'
 
 let store = createStore(appReducer)
 
+// object
+var obj = {
+  title: 'Hello',
+  text: 'lorem ipsum dolor',
+  category: 'uncategorized'
+}
+
 // create users
 store.dispatch(createUser('dan', 'Daniel Bugl'))
 store.dispatch(createUser('max', 'Max Mustermann'))
+store.dispatch(createUser('rena', 'Rena Elena'))
+store.dispatch(createUser('john', 'JOhn Wick'))
 
 // create posts
 store.dispatch(createPost('dan', {
@@ -28,7 +37,7 @@ store.dispatch(createPost('rena', {
   text: 'This is another test blog post.',
   category: 'test',
 }))
-store.dispatch(createPost('ronna', {
+store.dispatch(createPost('john', {
   title: 'Ronna post',
   text: 'This is another test blog post.',
   category: 'uncategorized',
