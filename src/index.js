@@ -10,10 +10,14 @@ let store = createStore(appReducer)
 
 // object
 var obj = {
-  title: 'Hello',
-  text: 'lorem ipsum dolor',
-  category: 'uncategorized'
-}
+  "posts": [
+    {
+      "user": "dan",
+      "text": "test"
+    }
+  ],
+  "filter": "all"
+};
 
 // create users
 store.dispatch(createUser('dan', 'Daniel Bugl'))
@@ -38,7 +42,7 @@ store.dispatch(createPost('rena', {
   category: 'test',
 }))
 store.dispatch(createPost('john', {
-  title: 'Ronna post',
+  title: 'Who is john',
   text: 'This is another test blog post.',
   category: 'uncategorized',
 }))

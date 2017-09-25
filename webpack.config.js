@@ -17,7 +17,7 @@ module.exports = {
     // This is only necessary if you want to serve static files. 
     // The public/ is where index.html resides.
     contentBase: path.join(__dirname, 'public/'),
-    port: 8000,
+    port: 8002,
     compress: true
   }
 }
